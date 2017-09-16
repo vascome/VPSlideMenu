@@ -27,8 +27,12 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 @property (nonatomic) IBInspectable BOOL tapGesturesEnabled;
 
 
-@property (nonatomic, copy) id<VPSlideMenuViewControllerDelegate> delegate;
+@property (nonatomic, copy) _Nullable id<VPSlideMenuViewControllerDelegate> delegate;
 
 
+
+-(instancetype _Nullable )initWithMainViewController:(nonnull UIViewController*) mainViewController
+                                 leftViewController:(nullable UIViewController*) leftViewController
+                                rightViewController:(nullable UIViewController*) rightViewController;
 
 @end

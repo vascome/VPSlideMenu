@@ -8,7 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum : NSUInteger {
+    VPSlideMenuSideLeft,
+    VPSlideMenuSideRight,
+} VPSlideMenuSide;
+
 @protocol VPSlideMenuViewControllerDelegate <NSObject>
+
+-(void)menuWillOpen:(VPSlideMenuSide)menu;
+-(void)menuDidOpened:(VPSlideMenuSide)menu;
+-(void)menuWillClose:(VPSlideMenuSide)menu;
+-(void)menuDidClosed:(VPSlideMenuSide)menu;
+
 
 @end
 
@@ -26,6 +37,9 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 @property (nonatomic) IBInspectable BOOL panGesturesEnabled;
 @property (nonatomic) IBInspectable BOOL tapGesturesEnabled;
 
+@property (nonatomic) IBInspectable CGFloat animationDuration;
+@property (nonatomic) IBInspectable CGFloat minPanWidth;
+
 
 @property (nonatomic, copy) _Nullable id<VPSlideMenuViewControllerDelegate> delegate;
 
@@ -34,5 +48,15 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 -(instancetype _Nullable )initWithMainViewController:(nonnull UIViewController*) mainViewController
                                  leftViewController:(nullable UIViewController*) leftViewController
                                 rightViewController:(nullable UIViewController*) rightViewController;
+
+-(void)setMainViewController:(nonnull UIViewController *)vc collapse:(BOOL) collapse;
+-(void)setLeftViewController:(nonnull UIViewController *)vc collapse:(BOOL) collapse;
+-(void)setRightViewController:(nonnull UIViewController *)vc collapse:(BOOL) collapse;
+
+-(void) toggleLeftMenu;
+-(void) toggleRightMenu;
+
+-(void)openMenu:(VPSlideMenuSide)type animated:(BOOL)animated;
+-(void)closeMenu:(VPSlideMenuSide)type animated:(BOOL)animated;
 
 @end

@@ -49,12 +49,6 @@ struct PanState {
 @property (nonatomic, strong) UIView *containerView;
 
 
-
-@property (nonatomic, strong) UIViewController *mainVC;
-@property (nonatomic, strong) UIViewController *leftVC;
-@property (nonatomic, strong) UIViewController *rightVC;
-
-
 @end
 
 @implementation VPSlideMenuViewController
@@ -62,6 +56,27 @@ struct PanState {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (self.storyboard)
+    {
+        @try
+        {
+            [self performSegueWithIdentifier:VPSideMenuSegueMainIdentifier sender:nil];
+        }
+        @catch (NSException *exception) {}
+        
+        @try
+        {
+            [self performSegueWithIdentifier:VPSideMenuSegueLeftIdentifier sender:nil];
+        }
+        @catch (NSException *exception) {}
+        
+        @try
+        {
+            [self performSegueWithIdentifier:VPSideMenuSegueRightIdentifier sender:nil];
+        }
+        @catch (NSException *exception) {}
+    }
+    [self initView];
     // Do any additional setup after loading the view.
 }
 
@@ -136,8 +151,6 @@ struct PanState {
 {
     [super awakeFromNib];
     [self setupDefaultValues];
-    [self initView];
-    
 }
 
 -(instancetype)initWithMainViewController:(UIViewController*) mainViewController
@@ -150,7 +163,6 @@ struct PanState {
         self.leftVC = leftViewController;
         self.rightVC = rightViewController;
         [self setupDefaultValues];
-        [self initView];
     }
     return self;
 }
@@ -601,6 +613,21 @@ struct PanState {
 }
 
 #pragma mark - properties
+
+-(void)setMainVC:(UIViewController *)vc
+{
+    _mainVC = vc;
+}
+
+-(void)setLeftVC:(UIViewController *)vc
+{
+    _leftVC = vc;
+}
+-(void)setRightVC:(UIViewController *)vc
+{
+    _rightVC = vc;
+}
+
 
 -(void)setLeftViewWidth:(CGFloat)leftViewWidth {
     _leftViewWidth = leftViewWidth;

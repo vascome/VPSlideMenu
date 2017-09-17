@@ -33,6 +33,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc {
+    NSLog(@"LeftViewController dealloc");
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return dataSource.count;
@@ -57,23 +60,31 @@
     
     VPSlideMenuViewController *vc = [self slideMenuController];
     
-    if(vc) {
-    
+    if(vc)
+    {
         switch(indexPath.row)
         {
-        case 0:
+            case 0:
+            {
+                if(self.mainViewController == nil) {
+                    VPSlideMenuViewController *vc = [self slideMenuController];
+                    self.mainViewController = vc.mainVC;
+                }
                 [vc setMainViewController:self.mainViewController collapse:YES];
                 break;
-        case 1:
-        case 2:
+            }
+            case 1:
+            case 2:
+            {
                 [vc setMainViewController:[[UINavigationController alloc] initWithRootViewController: [UIViewController new]] collapse:YES];
                 break;
-        case 3:
+            }
+            case 3:
             {
                 AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
                 app.window.rootViewController = [[UIStoryboard storyboardWithName:@"LoginStoryboard" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
-            }
                 break;
+            }
         }
     }
 }

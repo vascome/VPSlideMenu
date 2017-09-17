@@ -21,18 +21,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zva-FV-Nqa">
-                                <rect key="frame" x="154" y="318.5" width="66" height="30"/>
-                                <state key="normal" title="GO NEXT"/>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="dbI-ZK-5uN" eventType="touchUpInside" id="Hco-lI-Dzn"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NXP-WC-FCE">
+                                <rect key="frame" x="75" y="303.5" width="224" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zva-FV-Nqa">
+                                        <rect key="frame" x="4" y="0.0" width="216" height="30"/>
+                                        <state key="normal" title="OPEN SLIDE MENU MANUALLY"/>
+                                        <connections>
+                                            <action selector="buttonClicked:" destination="dbI-ZK-5uN" eventType="touchUpInside" id="Hco-lI-Dzn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBB-Qe-KO0">
+                                        <rect key="frame" x="0.0" y="30" width="224" height="30"/>
+                                        <state key="normal" title="OPEN SLIDEMENU WITH SEGUE"/>
+                                        <connections>
+                                            <segue destination="D96-Uo-UmJ" kind="custom" customClass="VPLoginToMenuSegue" id="N16-71-pBS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zva-FV-Nqa" firstAttribute="centerX" secondItem="QOu-aR-K0w" secondAttribute="centerX" id="RvA-mR-Wzm"/>
-                            <constraint firstItem="Zva-FV-Nqa" firstAttribute="centerY" secondItem="QOu-aR-K0w" secondAttribute="centerY" id="YNf-35-T0B"/>
+                            <constraint firstItem="NXP-WC-FCE" firstAttribute="centerX" secondItem="QOu-aR-K0w" secondAttribute="centerX" id="9YV-De-z6O"/>
+                            <constraint firstItem="NXP-WC-FCE" firstAttribute="centerY" secondItem="QOu-aR-K0w" secondAttribute="centerY" id="ubG-cG-scg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="htA-eI-Zzb"/>
@@ -40,6 +52,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIm-QN-Xh5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="90.404797601199405"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="DKv-2F-AKB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="D96-Uo-UmJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DS1-L5-azA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1766" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lnE-gJ-mlN">

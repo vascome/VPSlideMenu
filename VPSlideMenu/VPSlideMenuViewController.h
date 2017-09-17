@@ -23,6 +23,10 @@ typedef enum : NSUInteger {
 
 @end
 
+static NSString * _Nonnull const VPSideMenuSegueMainIdentifier  = @"main";
+static NSString * _Nonnull const VPSideMenuSegueLeftIdentifier  = @"left";
+static NSString * _Nonnull const VPSideMenuSegueRightIdentifier = @"right";
+
 
 IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 
@@ -42,6 +46,10 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 
 @property (nonatomic) IBInspectable BOOL willMenuOverlapMainView;
 @property (nonatomic) IBInspectable BOOL hideStatusBar;
+
+@property (nonatomic, strong, readonly) UIViewController * _Nonnull mainVC;
+@property (nonatomic, strong, readonly) UIViewController * _Nullable leftVC;
+@property (nonatomic, strong, readonly) UIViewController * _Nullable rightVC;
 
 
 @property (nonatomic, copy) _Nullable id<VPSlideMenuViewControllerDelegate> delegate;

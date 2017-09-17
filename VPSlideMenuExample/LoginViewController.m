@@ -35,10 +35,6 @@
     UIViewController *rightVC = [sBoard instantiateViewControllerWithIdentifier:@"RightVC"];
     
     UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:mainVC];
-    
-    
-    
-    
     leftVC.mainViewController = nvc;
     
     VPSlideMenuViewController *slideMenuController = [[VPSlideMenuViewController alloc] initWithMainViewController:nvc leftViewController:leftVC rightViewController:rightVC];
@@ -48,18 +44,18 @@
 
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     app.window.rootViewController = slideMenuController;
-    
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)dealloc {
+    NSLog(@"LoginViewController dealloc");
 }
-*/
+
+-(void)alternativeLoad
+{
+    VPSlideMenuViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    ((LeftViewController*)vc.leftVC).mainViewController = vc.mainVC;
+    app.window.rootViewController = vc;
+}
 
 @end

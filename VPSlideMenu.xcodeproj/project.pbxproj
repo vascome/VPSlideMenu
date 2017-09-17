@@ -19,6 +19,8 @@
 		F0CB457E1F6DE444004EDA84 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB457D1F6DE444004EDA84 /* MainViewController.m */; };
 		F0CB45811F6DE481004EDA84 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45801F6DE481004EDA84 /* RightViewController.m */; };
 		F0CB45841F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */; };
+		F0CB45871F6E8318004EDA84 /* VPSlideMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45861F6E8318004EDA84 /* VPSlideMenuSegue.m */; };
+		F0CB458A1F6E92C6004EDA84 /* VPLoginToMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45891F6E92C6004EDA84 /* VPLoginToMenuSegue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,10 @@
 		F0CB45801F6DE481004EDA84 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
 		F0CB45821F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+VPSlideMenu.h"; path = "VPSlideMenu/UIViewController+VPSlideMenu.h"; sourceTree = "<group>"; };
 		F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+VPSlideMenu.m"; path = "VPSlideMenu/UIViewController+VPSlideMenu.m"; sourceTree = "<group>"; };
+		F0CB45851F6E8318004EDA84 /* VPSlideMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPSlideMenuSegue.h; path = VPSlideMenu/VPSlideMenuSegue.h; sourceTree = "<group>"; };
+		F0CB45861F6E8318004EDA84 /* VPSlideMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPSlideMenuSegue.m; path = VPSlideMenu/VPSlideMenuSegue.m; sourceTree = "<group>"; };
+		F0CB45881F6E92C6004EDA84 /* VPLoginToMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPLoginToMenuSegue.h; sourceTree = "<group>"; };
+		F0CB45891F6E92C6004EDA84 /* VPLoginToMenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPLoginToMenuSegue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +95,8 @@
 				F0CB457D1F6DE444004EDA84 /* MainViewController.m */,
 				F0CB457F1F6DE481004EDA84 /* RightViewController.h */,
 				F0CB45801F6DE481004EDA84 /* RightViewController.m */,
+				F0CB45881F6E92C6004EDA84 /* VPLoginToMenuSegue.h */,
+				F0CB45891F6E92C6004EDA84 /* VPLoginToMenuSegue.m */,
 			);
 			path = VPSlideMenuExample;
 			sourceTree = "<group>";
@@ -111,6 +119,8 @@
 				F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */,
 				F0CB456F1F6D7EC8004EDA84 /* VPSlideMenuViewController.h */,
 				F0CB45701F6D7EC8004EDA84 /* VPSlideMenuViewController.m */,
+				F0CB45851F6E8318004EDA84 /* VPSlideMenuSegue.h */,
+				F0CB45861F6E8318004EDA84 /* VPSlideMenuSegue.m */,
 			);
 			name = VPSlideMenu;
 			sourceTree = "<group>";
@@ -189,7 +199,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0CB45811F6DE481004EDA84 /* RightViewController.m in Sources */,
+				F0CB45871F6E8318004EDA84 /* VPSlideMenuSegue.m in Sources */,
 				F0CB45431F6C7DC5004EDA84 /* LeftViewController.m in Sources */,
+				F0CB458A1F6E92C6004EDA84 /* VPLoginToMenuSegue.m in Sources */,
 				F0CB457E1F6DE444004EDA84 /* MainViewController.m in Sources */,
 				F0CB45711F6D7EC9004EDA84 /* VPSlideMenuViewController.m in Sources */,
 				F0CB45401F6C7DC5004EDA84 /* AppDelegate.m in Sources */,

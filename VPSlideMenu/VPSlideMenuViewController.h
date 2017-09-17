@@ -40,6 +40,8 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 @property (nonatomic) IBInspectable CGFloat animationDuration;
 @property (nonatomic) IBInspectable CGFloat minPanWidth;
 
+@property (nonatomic) IBInspectable BOOL willMenuOverlapMainView;
+
 
 @property (nonatomic, copy) _Nullable id<VPSlideMenuViewControllerDelegate> delegate;
 

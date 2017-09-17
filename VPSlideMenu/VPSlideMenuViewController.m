@@ -167,6 +167,7 @@ struct PanState {
      _panGesturesEnabled = YES;
      _tapGesturesEnabled = YES;
     
+    _willMenuOverlapMainView = YES;
     _animationDuration = 0.5;
     _minPanWidth = 100;
 }
@@ -780,12 +781,24 @@ struct PanState {
         duration = fmax(0.1, fmin(1.0, duration));
     }
     
+    CGRect rootFrame = _containerView.frame;
+    
+    if (!_willMenuOverlapMainView) {
+        if(type == VPSlideMenuSideLeft) {
+            rootFrame.origin.x = finalX + frame.size.width;
+        }
+        else {
+            rootFrame.origin.x = -finalX;
+        }
+    }
+    
     __weak typeof(self) weakSelf = self;
     
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
             contentView.frame = frame;
+            strongSelf.containerView.frame = rootFrame;
             strongSelf.containerView.transform = CGAffineTransformScale(strongSelf.containerView.transform, 1.0, 1.0);
         }
     } completion:^(BOOL finished) {
@@ -830,12 +843,14 @@ struct PanState {
         duration = fmax(0.1, fmin(1.0, duration));
     }
     
+    CGRect rootFrame = self.view.frame;
     __weak typeof(self) weakSelf = self;
     
     [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionTransitionNone animations:^{
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
             contentView.frame = frame;
+            strongSelf.containerView.frame = rootFrame;
             strongSelf.containerView.transform = CGAffineTransformScale(strongSelf.containerView.transform, 1.0, 1.0);
         }
     } completion:^(BOOL finished) {

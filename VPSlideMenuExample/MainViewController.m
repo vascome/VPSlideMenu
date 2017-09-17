@@ -7,8 +7,7 @@
 //
 
 #import "MainViewController.h"
-#import "UIViewController+VPSlideMenu.h"
-#import "VPSlideMenuViewController.h"
+#import <VPSLideMenu/VPSlideMenu.h>
 
 @interface MainViewController () <UITableViewDelegate,UITableViewDataSource>
 {

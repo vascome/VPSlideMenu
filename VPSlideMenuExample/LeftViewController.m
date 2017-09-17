@@ -7,9 +7,8 @@
 //
 
 #import "LeftViewController.h"
-#import "UIViewController+VPSlideMenu.h"
-#import "VPSlideMenuViewController.h"
 #import "AppDelegate.h"
+#import <VPSLideMenu/VPSlideMenu.h>
 
 @interface LeftViewController () <UITableViewDelegate,UITableViewDataSource>
 {

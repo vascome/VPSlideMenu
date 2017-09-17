@@ -7,8 +7,7 @@
 //
 
 #import "RightViewController.h"
-#import "UIViewController+VPSlideMenu.h"
-#import "VPSlideMenuViewController.h"
+#import <VPSLideMenu/VPSlideMenu.h>
 
 @interface RightViewController () <UITableViewDelegate,UITableViewDataSource>
 {

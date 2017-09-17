@@ -8,8 +8,8 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
-#import "VPSlideMenuViewController.h"
 #import "LeftViewController.h"
+#import <VPSLideMenu/VPSlideMenu.h>
 
 @interface LoginViewController ()
 

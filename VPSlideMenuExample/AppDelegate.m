@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "VPSlideMenuViewController.h"
 #import "LeftViewController.h"
 
 @interface AppDelegate ()

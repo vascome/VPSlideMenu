@@ -147,11 +147,14 @@ struct PanState {
 
 #pragma mark - init
 
--(void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self setupDefaultValues];
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if(self) {
+        [self setupDefaultValues];
+    }
+    return self;
 }
+
 
 -(instancetype)initWithMainViewController:(UIViewController*) mainViewController
                        leftViewController:(UIViewController*) leftViewController

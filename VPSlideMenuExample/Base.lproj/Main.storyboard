@@ -22,6 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideStatusBar" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="willMenuOverlapMainView" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Pzs-EX-Zc1" kind="custom" identifier="main" customClass="VPSlideMenuSegue" id="OzX-dJ-FiI"/>
                         <segue destination="8Dz-NC-tXk" kind="custom" identifier="left" customClass="VPSlideMenuSegue" id="V1u-Qh-Xxu"/>

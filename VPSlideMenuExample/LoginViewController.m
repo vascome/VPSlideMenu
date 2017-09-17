@@ -38,7 +38,6 @@
     leftVC.mainViewController = nvc;
     
     VPSlideMenuViewController *slideMenuController = [[VPSlideMenuViewController alloc] initWithMainViewController:nvc leftViewController:leftVC rightViewController:rightVC];
-    //slideMenuController.willMenuOverlapMainView = NO;
     [slideMenuController setAutomaticallyAdjustsScrollViewInsets:YES];
     
 

@@ -12,6 +12,8 @@ VPSlideMenu
 
 iOS Slide View
 
+<img src="https://github.com/vascome/VPSlideMenu/blob/master/Screenshots/example.gif" width="314"/>
+
 ## Installation
 
 #### CocoaPods

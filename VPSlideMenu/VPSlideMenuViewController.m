@@ -228,9 +228,12 @@ struct PanState {
 
 -(void)setMainViewController:(UIViewController *)vc collapse:(BOOL) collapse {
     
-    [self removeViewController:_mainVC];
-    _mainVC = vc;
-    [self setViewController:vc toContainer:_containerView];
+    if(vc != _mainVC) //reference comparison
+    {
+        [self removeViewController:_mainVC];
+        _mainVC = vc;
+        [self setViewController:vc toContainer:_containerView];
+    }
 
     if (collapse) {
         [self closeMenu:VPSlideMenuSideLeft animated:YES];
@@ -838,7 +841,7 @@ struct PanState {
     } completion:^(BOOL finished) {
         __strong typeof(weakSelf) strongSelf = weakSelf;
         if (strongSelf) {
-            [strongSelf disableContentInteraction];
+            [strongSelf enableContentInteraction];
             [vc endAppearanceTransition];
             if(strongSelf.delegate) {
                 [strongSelf.delegate menuDidClosed:type];

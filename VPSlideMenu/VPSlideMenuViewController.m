@@ -170,6 +170,7 @@ struct PanState {
     _willMenuOverlapMainView = YES;
     _animationDuration = 0.5;
     _minPanWidth = 100;
+    _hideStatusBar = YES;
 }
 
 - (void) initView {
@@ -363,6 +364,7 @@ struct PanState {
                 leftPan.wasOpenAtStart = [self isLeftMenuOpened];
                 leftPan.wasHiddenAtStart = [self isLeftMenuHidden];
                 [_leftVC beginAppearanceTransition:leftPan.wasHiddenAtStart animated:YES];
+                [self closeStatusBar];
             }
             break;
         
@@ -393,9 +395,10 @@ struct PanState {
                     }
                     [self closeMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
                 }
+                [self openStatusBar];
             }
             else {
-                
+                [self openStatusBar];
             }
             
             break;
@@ -429,6 +432,7 @@ struct PanState {
                 rightPan.wasOpenAtStart = [self isRightMenuOpened];
                 rightPan.wasHiddenAtStart = [self isRightMenuHidden];
                 [_rightVC beginAppearanceTransition:rightPan.wasHiddenAtStart animated:YES];
+                [self closeStatusBar];
             }
             break;
             
@@ -459,9 +463,10 @@ struct PanState {
                     }
                     [self closeMenu:VPSlideMenuSideRight withVelocity:panDetail.velocity];
                 }
+                [self openStatusBar];
             }
             else {
-                
+                [self openStatusBar];
             }
             
             break;
@@ -498,9 +503,11 @@ struct PanState {
     
     
     if(vc != nil) {
+        
         if(self.delegate) {
             [self.delegate menuWillOpen:type];
         }
+        [self closeStatusBar];
         if(animated) {
             [vc beginAppearanceTransition:isAppearing animated:YES];
             [self openMenu:type withVelocity:0.0];
@@ -542,6 +549,7 @@ struct PanState {
         if(self.delegate) {
             [self.delegate menuWillClose:type];
         }
+        [self openStatusBar];
         if(animated) {
             [vc beginAppearanceTransition:isAppearing animated:YES];
             [self closeMenu:type withVelocity:0.0];
@@ -930,6 +938,30 @@ struct PanState {
         detail.velocity = velocity.x;
     }
     return detail;
+}
+
+#pragma mark - status bar
+
+-(void)closeStatusBar {
+    if(_hideStatusBar) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIWindow *window = [UIApplication sharedApplication].keyWindow;
+            if(window) {
+                window.windowLevel = UIWindowLevelStatusBar + 1; //above status bar
+            }
+        });
+    }
+}
+
+-(void)openStatusBar {
+    if(_hideStatusBar) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIWindow *window = [UIApplication sharedApplication].keyWindow;
+            if(window) {
+                window.windowLevel = UIWindowLevelNormal;
+            }
+        });
+    }
 }
 
 @end

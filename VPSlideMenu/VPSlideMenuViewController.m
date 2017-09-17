@@ -407,8 +407,8 @@ struct PanState {
                         [_leftVC beginAppearanceTransition:NO animated:YES];
                     }
                     [self closeMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
+                    [self openStatusBar];
                 }
-                [self openStatusBar];
             }
             else {
                 [self openStatusBar];
@@ -475,8 +475,8 @@ struct PanState {
                         [_rightVC beginAppearanceTransition:NO animated:YES];
                     }
                     [self closeMenu:VPSlideMenuSideRight withVelocity:panDetail.velocity];
+                    [self openStatusBar];
                 }
-                [self openStatusBar];
             }
             else {
                 [self openStatusBar];

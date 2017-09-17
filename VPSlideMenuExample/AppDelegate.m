@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "VPSlideMenuViewController.h"
+#import "LeftViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor redColor]];
+    [UINavigationBar appearance].translucent = NO;
+    
     return YES;
 }
 

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface LeftViewController : UIViewController
 
+@property (nonatomic, strong) UIViewController *mainViewController;
 
 @end
 

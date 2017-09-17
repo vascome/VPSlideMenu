@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		F0CB453D1F6C7DC5004EDA84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB453C1F6C7DC5004EDA84 /* main.m */; };
 		F0CB45401F6C7DC5004EDA84 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB453F1F6C7DC5004EDA84 /* AppDelegate.m */; };
-		F0CB45431F6C7DC5004EDA84 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45421F6C7DC5004EDA84 /* ViewController.m */; };
+		F0CB45431F6C7DC5004EDA84 /* LeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45421F6C7DC5004EDA84 /* LeftViewController.m */; };
 		F0CB45461F6C7DC5004EDA84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CB45441F6C7DC5004EDA84 /* Main.storyboard */; };
 		F0CB45481F6C7DC6004EDA84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0CB45471F6C7DC6004EDA84 /* Assets.xcassets */; };
 		F0CB454B1F6C7DC6004EDA84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CB45491F6C7DC6004EDA84 /* LaunchScreen.storyboard */; };
 		F0CB45711F6D7EC9004EDA84 /* VPSlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45701F6D7EC8004EDA84 /* VPSlideMenuViewController.m */; };
+		F0CB45781F6DDED0004EDA84 /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0CB45761F6DDED0004EDA84 /* LoginStoryboard.storyboard */; };
+		F0CB457B1F6DDF35004EDA84 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB457A1F6DDF35004EDA84 /* LoginViewController.m */; };
+		F0CB457E1F6DE444004EDA84 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB457D1F6DE444004EDA84 /* MainViewController.m */; };
+		F0CB45811F6DE481004EDA84 /* RightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45801F6DE481004EDA84 /* RightViewController.m */; };
+		F0CB45841F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +26,23 @@
 		F0CB453C1F6C7DC5004EDA84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F0CB453E1F6C7DC5004EDA84 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F0CB453F1F6C7DC5004EDA84 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F0CB45411F6C7DC5004EDA84 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F0CB45421F6C7DC5004EDA84 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F0CB45411F6C7DC5004EDA84 /* LeftViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftViewController.h; sourceTree = "<group>"; };
+		F0CB45421F6C7DC5004EDA84 /* LeftViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftViewController.m; sourceTree = "<group>"; };
 		F0CB45451F6C7DC5004EDA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0CB45471F6C7DC6004EDA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0CB454A1F6C7DC6004EDA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0CB454C1F6C7DC6004EDA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0CB456F1F6D7EC8004EDA84 /* VPSlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VPSlideMenuViewController.h; path = VPSlideMenu/VPSlideMenuViewController.h; sourceTree = "<group>"; };
 		F0CB45701F6D7EC8004EDA84 /* VPSlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VPSlideMenuViewController.m; path = VPSlideMenu/VPSlideMenuViewController.m; sourceTree = "<group>"; };
+		F0CB45771F6DDED0004EDA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		F0CB45791F6DDF35004EDA84 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F0CB457A1F6DDF35004EDA84 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F0CB457C1F6DE444004EDA84 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F0CB457D1F6DE444004EDA84 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F0CB457F1F6DE481004EDA84 /* RightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightViewController.h; sourceTree = "<group>"; };
+		F0CB45801F6DE481004EDA84 /* RightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightViewController.m; sourceTree = "<group>"; };
+		F0CB45821F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+VPSlideMenu.h"; path = "VPSlideMenu/UIViewController+VPSlideMenu.h"; sourceTree = "<group>"; };
+		F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+VPSlideMenu.m"; path = "VPSlideMenu/UIViewController+VPSlideMenu.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +76,19 @@
 		F0CB453A1F6C7DC5004EDA84 /* VPSlideMenuExample */ = {
 			isa = PBXGroup;
 			children = (
+				F0CB45441F6C7DC5004EDA84 /* Main.storyboard */,
+				F0CB45761F6DDED0004EDA84 /* LoginStoryboard.storyboard */,
+				F0CB453B1F6C7DC5004EDA84 /* Supporting Files */,
 				F0CB453E1F6C7DC5004EDA84 /* AppDelegate.h */,
 				F0CB453F1F6C7DC5004EDA84 /* AppDelegate.m */,
-				F0CB45411F6C7DC5004EDA84 /* ViewController.h */,
-				F0CB45421F6C7DC5004EDA84 /* ViewController.m */,
-				F0CB45441F6C7DC5004EDA84 /* Main.storyboard */,
-				F0CB45471F6C7DC6004EDA84 /* Assets.xcassets */,
-				F0CB45491F6C7DC6004EDA84 /* LaunchScreen.storyboard */,
-				F0CB454C1F6C7DC6004EDA84 /* Info.plist */,
-				F0CB453B1F6C7DC5004EDA84 /* Supporting Files */,
+				F0CB45411F6C7DC5004EDA84 /* LeftViewController.h */,
+				F0CB45421F6C7DC5004EDA84 /* LeftViewController.m */,
+				F0CB45791F6DDF35004EDA84 /* LoginViewController.h */,
+				F0CB457A1F6DDF35004EDA84 /* LoginViewController.m */,
+				F0CB457C1F6DE444004EDA84 /* MainViewController.h */,
+				F0CB457D1F6DE444004EDA84 /* MainViewController.m */,
+				F0CB457F1F6DE481004EDA84 /* RightViewController.h */,
+				F0CB45801F6DE481004EDA84 /* RightViewController.m */,
 			);
 			path = VPSlideMenuExample;
 			sourceTree = "<group>";
@@ -78,6 +96,9 @@
 		F0CB453B1F6C7DC5004EDA84 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F0CB45491F6C7DC6004EDA84 /* LaunchScreen.storyboard */,
+				F0CB45471F6C7DC6004EDA84 /* Assets.xcassets */,
+				F0CB454C1F6C7DC6004EDA84 /* Info.plist */,
 				F0CB453C1F6C7DC5004EDA84 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -86,6 +107,8 @@
 		F0CB456E1F6C883A004EDA84 /* VPSlideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				F0CB45821F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.h */,
+				F0CB45831F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m */,
 				F0CB456F1F6D7EC8004EDA84 /* VPSlideMenuViewController.h */,
 				F0CB45701F6D7EC8004EDA84 /* VPSlideMenuViewController.m */,
 			);
@@ -154,6 +177,7 @@
 				F0CB454B1F6C7DC6004EDA84 /* LaunchScreen.storyboard in Resources */,
 				F0CB45481F6C7DC6004EDA84 /* Assets.xcassets in Resources */,
 				F0CB45461F6C7DC5004EDA84 /* Main.storyboard in Resources */,
+				F0CB45781F6DDED0004EDA84 /* LoginStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,10 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0CB45431F6C7DC5004EDA84 /* ViewController.m in Sources */,
+				F0CB45811F6DE481004EDA84 /* RightViewController.m in Sources */,
+				F0CB45431F6C7DC5004EDA84 /* LeftViewController.m in Sources */,
+				F0CB457E1F6DE444004EDA84 /* MainViewController.m in Sources */,
 				F0CB45711F6D7EC9004EDA84 /* VPSlideMenuViewController.m in Sources */,
 				F0CB45401F6C7DC5004EDA84 /* AppDelegate.m in Sources */,
+				F0CB45841F6DEA2B004EDA84 /* UIViewController+VPSlideMenu.m in Sources */,
 				F0CB453D1F6C7DC5004EDA84 /* main.m in Sources */,
+				F0CB457B1F6DDF35004EDA84 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +216,14 @@
 				F0CB454A1F6C7DC6004EDA84 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F0CB45761F6DDED0004EDA84 /* LoginStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0CB45771F6DDED0004EDA84 /* Base */,
+			);
+			name = LoginStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -59,4 +59,9 @@ IB_DESIGNABLE @interface VPSlideMenuViewController : UIViewController
 -(void)openMenu:(VPSlideMenuSide)type animated:(BOOL)animated;
 -(void)closeMenu:(VPSlideMenuSide)type animated:(BOOL)animated;
 
+-(void)removeLeftGestures;
+-(void)removeRightGestures;
+-(void)addRightGestures;
+-(void)addLeftGestures;
+
 @end

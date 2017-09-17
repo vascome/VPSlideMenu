@@ -156,12 +156,12 @@ struct PanState {
 
 -(void)setupDefaultValues
 {
-     _leftViewWidth = 100;
-     _leftAreaWidth = 0;
+     _leftViewWidth = 160.0;
+     _leftAreaWidth = 10.0;
      _leftPanEnabled = YES;
     
-     _rightViewWidth = 100;
-     _rightAreaWidth = 0;
+     _rightViewWidth = 160.0;
+     _rightAreaWidth = 10.0;
      _rightPanEnabled = YES;
     
      _panGesturesEnabled = YES;

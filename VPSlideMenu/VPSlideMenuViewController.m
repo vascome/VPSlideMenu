@@ -126,6 +126,7 @@ struct PanState {
 }
 
 -(void)dealloc {
+    [self openStatusBar];
     NSLog(@"VPSlideMenuViewController dealloc");
 }
 

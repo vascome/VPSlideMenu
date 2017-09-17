@@ -65,10 +65,6 @@
         {
             case 0:
             {
-                if(self.mainViewController == nil) {
-                    VPSlideMenuViewController *vc = [self slideMenuController];
-                    self.mainViewController = vc.mainVC;
-                }
                 [vc setMainViewController:self.mainViewController collapse:YES];
                 break;
             }

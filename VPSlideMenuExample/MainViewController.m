@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "LeftViewController.h"
 #import <VPSLideMenu/VPSlideMenu.h>
 
 @interface MainViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -24,7 +25,11 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     dataSource = @[@"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M"];
-    // Do any additional setup after loading the view.
+    VPSlideMenuViewController *vc = [self slideMenuController];
+    LeftViewController *left = (LeftViewController*)vc.leftVC;
+    if(left.mainViewController == nil) {
+        left.mainViewController = self.navigationController;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated {

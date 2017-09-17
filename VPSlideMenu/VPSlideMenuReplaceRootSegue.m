@@ -8,7 +8,6 @@
 
 #import "VPSlideMenuReplaceRootSegue.h"
 #import "VPSlideMenuViewController.h"
-#import "LeftViewController.h"
 
 @implementation VPSlideMenuReplaceRootSegue
 

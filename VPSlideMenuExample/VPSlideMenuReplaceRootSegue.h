@@ -1,5 +1,5 @@
 //
-//  VPLoginToMenuSegue.h
+//  VPSlideMenuReplaceRootSegue.h
 //  VPSlideMenu
 //
 //  Created by Vasily Popov on 9/17/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VPLoginToMenuSegue : UIStoryboardSegue
+@interface VPSlideMenuReplaceRootSegue : UIStoryboardSegue
 
 @end

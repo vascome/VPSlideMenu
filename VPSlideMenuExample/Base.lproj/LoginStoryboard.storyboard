@@ -35,7 +35,7 @@
                                         <rect key="frame" x="0.0" y="30" width="224" height="30"/>
                                         <state key="normal" title="OPEN SLIDEMENU WITH SEGUE"/>
                                         <connections>
-                                            <segue destination="D96-Uo-UmJ" kind="custom" customClass="VPLoginToMenuSegue" id="N16-71-pBS"/>
+                                            <segue destination="D96-Uo-UmJ" kind="custom" customClass="VPSlideMenuReplaceRootSegue" id="N16-71-pBS"/>
                                         </connections>
                                     </button>
                                 </subviews>

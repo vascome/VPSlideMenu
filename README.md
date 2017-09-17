@@ -18,6 +18,7 @@ iOS Slide View
 
 #### CocoaPods
 ```
+pod 'VPSlideMenu'
 ```
   
 #### Carthage

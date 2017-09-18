@@ -12,5 +12,7 @@
 @interface UIViewController (VPSlideMenu)
 
 -(VPSlideMenuViewController*) slideMenuController;
+-(void) toggleLeftMenu;
+-(void) toggleRightMenu;
 
 @end

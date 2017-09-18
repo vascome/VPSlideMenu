@@ -415,7 +415,14 @@ struct PanState {
             else {
                 [self openStatusBar];
             }
+        case UIGestureRecognizerStateFailed:
             
+            if([self isLeftMenuHidden]) {
+                [self openStatusBar];
+            }
+            else {
+                [self closeStatusBar];
+            }
             break;
         default:
             break;
@@ -483,7 +490,13 @@ struct PanState {
             else {
                 [self openStatusBar];
             }
-            
+        case UIGestureRecognizerStateFailed:
+            if([self isRightMenuHidden]) {
+                [self openStatusBar];
+            }
+            else {
+                [self closeStatusBar];
+            }
             break;
         default:
             break;

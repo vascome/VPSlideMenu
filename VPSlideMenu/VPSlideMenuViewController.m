@@ -424,7 +424,7 @@ struct PanState {
             }
         case UIGestureRecognizerStateFailed:
             
-            if(!leftPan.wasOpenAtStart) {
+            if(![self isLeftMenuOpened]) {
                 [self openStatusBar];
             }
             else {
@@ -502,7 +502,7 @@ struct PanState {
                 [self openStatusBar];
             }
         case UIGestureRecognizerStateFailed:
-            if(!rightPan.wasOpenAtStart) {
+            if(![self isRightMenuOpened]) {
                 [self openStatusBar];
             }
             else {

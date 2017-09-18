@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "VPSlideMenu"
-  s.version          = "0.4.0"
+  s.version          = "0.5.0"
   s.summary          = "Menu View Controller. It has left, right and main view controllers. Supported tap and pan gestures. Supported storyboards"
   s.homepage         = 'https://github.com/vascome/VPSlideMenu'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

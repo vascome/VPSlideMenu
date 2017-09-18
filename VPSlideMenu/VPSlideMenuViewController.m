@@ -20,7 +20,8 @@ struct PanGuestureDetail {
 
 
 struct PanState {
-    CGRect panFrameStarted;
+    CGRect panSideFrameStarted;
+    CGRect panMainFrameStarted;
     CGPoint panPointStarted;
     BOOL wasOpenAtStart;
     BOOL wasHiddenAtStart;
@@ -218,14 +219,16 @@ struct PanState {
         [self.view addSubview:_rightContainerView];
     }
     
-    leftPan.panFrameStarted = CGRectZero;
+    leftPan.panSideFrameStarted = CGRectZero;
+    leftPan.panMainFrameStarted = CGRectZero;
     leftPan.panPointStarted = CGPointZero;
     leftPan.wasHiddenAtStart = NO;
     leftPan.wasOpenAtStart = NO;
     leftPan.lastState = UIGestureRecognizerStateEnded;
     
     
-    rightPan.panFrameStarted = CGRectZero;
+    rightPan.panSideFrameStarted = CGRectZero;
+    rightPan.panMainFrameStarted = CGRectZero;
     rightPan.panPointStarted = CGPointZero;
     rightPan.wasHiddenAtStart = NO;
     rightPan.wasOpenAtStart = NO;
@@ -374,11 +377,15 @@ struct PanState {
                         [self.delegate menuWillClose:VPSlideMenuSideLeft];
                     }
                 }
-                leftPan.panFrameStarted = _leftContainerView.frame;
+                leftPan.panSideFrameStarted = _leftContainerView.frame;
+                leftPan.panMainFrameStarted = _containerView.frame;
                 leftPan.panPointStarted = [panGesture locationInView:self.view];
                 leftPan.wasOpenAtStart = [self isLeftMenuOpened];
                 leftPan.wasHiddenAtStart = [self isLeftMenuHidden];
                 [_leftVC beginAppearanceTransition:leftPan.wasHiddenAtStart animated:YES];
+                if(!_willMenuOverlapMainView) {
+                    [_mainVC beginAppearanceTransition:leftPan.wasHiddenAtStart animated:YES];
+                }
                 [self closeStatusBar];
             }
             break;
@@ -389,7 +396,10 @@ struct PanState {
                 leftPan.lastState == UIGestureRecognizerStateChanged) {
                 
                 CGPoint translation = [panGesture translationInView:panGesture.view];
-                _leftContainerView.frame = [self applyLeftMenuTranslation:translation to:leftPan.panFrameStarted];
+                _leftContainerView.frame = [self applyLeftMenuTranslation:translation to:leftPan.panSideFrameStarted];
+                if(!_willMenuOverlapMainView) {
+                    _containerView.frame = [self applyContentMenuLeftTranslation:translation to:leftPan.panMainFrameStarted];
+                }
             }
             
             break;
@@ -402,11 +412,17 @@ struct PanState {
                 if(panDetail.action == VPSlideMenuActionOpen) {
                     if (!leftPan.wasHiddenAtStart) {
                         [_leftVC beginAppearanceTransition:YES animated:YES];
+                        if(!_willMenuOverlapMainView) {
+                            [_mainVC beginAppearanceTransition:YES animated:YES];
+                        }
                     }
                     [self openMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
                 } else {
                     if (leftPan.wasHiddenAtStart) {
                         [_leftVC beginAppearanceTransition:NO animated:YES];
+                        if(!_willMenuOverlapMainView) {
+                            [_mainVC beginAppearanceTransition:NO animated:YES];
+                        }
                     }
                     [self closeMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
                     [self openStatusBar];
@@ -442,7 +458,8 @@ struct PanState {
                         [self.delegate menuWillClose:VPSlideMenuSideRight];
                     }
                 }
-                rightPan.panFrameStarted = _rightContainerView.frame;
+                rightPan.panSideFrameStarted = _rightContainerView.frame;
+                rightPan.panMainFrameStarted = _containerView.frame;
                 rightPan.panPointStarted = [panGesture locationInView:self.view];
                 rightPan.wasOpenAtStart = [self isRightMenuOpened];
                 rightPan.wasHiddenAtStart = [self isRightMenuHidden];
@@ -457,7 +474,10 @@ struct PanState {
                 rightPan.lastState == UIGestureRecognizerStateChanged) {
                 
                 CGPoint translation = [panGesture translationInView:panGesture.view];
-                _rightContainerView.frame = [self applyRightMenuTranslation:translation to:rightPan.panFrameStarted];
+                _rightContainerView.frame = [self applyRightMenuTranslation:translation to:rightPan.panSideFrameStarted];
+                if(!_willMenuOverlapMainView) {
+                    _containerView.frame = [self applyContentMenuRightTranslation:translation to:rightPan.panMainFrameStarted];
+                }
             }
             
             break;
@@ -904,6 +924,30 @@ struct PanState {
 }
 
 #pragma mark - pan gesture helpers
+
+-(CGRect) applyContentMenuLeftTranslation: (CGPoint) translation to:(CGRect)frame {
+    CGFloat newOrigin = frame.origin.x;
+    newOrigin += translation.x;
+    
+    CGFloat maxOrigin = -[self leftMenuOriginForClosedState];
+    CGFloat minOrigin = 0.0;
+    CGRect newFrame = frame;
+    
+    newFrame.origin.x = fmin(maxOrigin, fmax(minOrigin, newOrigin));
+    return newFrame;
+}
+
+-(CGRect) applyContentMenuRightTranslation: (CGPoint) translation to:(CGRect)frame {
+    CGFloat newOrigin = frame.origin.x;
+    newOrigin += translation.x;
+    
+    CGFloat maxOrigin = 0.0;
+    CGFloat minOrigin = -_rightContainerView.frame.size.width;
+    CGRect newFrame = frame;
+    
+    newFrame.origin.x = fmin(maxOrigin, fmax(minOrigin, newOrigin));
+    return newFrame;
+}
 
 -(CGRect) applyLeftMenuTranslation: (CGPoint) translation to:(CGRect)frame {
     

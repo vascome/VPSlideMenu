@@ -412,17 +412,11 @@ struct PanState {
                 if(panDetail.action == VPSlideMenuActionOpen) {
                     if (!leftPan.wasHiddenAtStart) {
                         [_leftVC beginAppearanceTransition:YES animated:YES];
-                        if(!_willMenuOverlapMainView) {
-                            [_mainVC beginAppearanceTransition:YES animated:YES];
-                        }
                     }
                     [self openMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
                 } else {
                     if (leftPan.wasHiddenAtStart) {
                         [_leftVC beginAppearanceTransition:NO animated:YES];
-                        if(!_willMenuOverlapMainView) {
-                            [_mainVC beginAppearanceTransition:NO animated:YES];
-                        }
                     }
                     [self closeMenu:VPSlideMenuSideLeft withVelocity:panDetail.velocity];
                     [self openStatusBar];

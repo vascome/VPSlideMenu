@@ -383,9 +383,6 @@ struct PanState {
                 leftPan.wasOpenAtStart = [self isLeftMenuOpened];
                 leftPan.wasHiddenAtStart = [self isLeftMenuHidden];
                 [_leftVC beginAppearanceTransition:leftPan.wasHiddenAtStart animated:YES];
-                if(!_willMenuOverlapMainView) {
-                    [_mainVC beginAppearanceTransition:leftPan.wasHiddenAtStart animated:YES];
-                }
                 [self closeStatusBar];
             }
             break;

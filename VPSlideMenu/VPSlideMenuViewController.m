@@ -142,7 +142,6 @@ struct PanState {
 
 -(void)dealloc {
     [self openStatusBar];
-    NSLog(@"VPSlideMenuViewController dealloc");
 }
 
 #pragma mark - init

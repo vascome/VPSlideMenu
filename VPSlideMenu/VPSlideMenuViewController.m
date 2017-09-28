@@ -186,7 +186,7 @@ struct PanState {
      _panGesturesEnabled = YES;
      _tapGesturesEnabled = YES;
     
-    _willMenuOverlapMainView = NO;
+    _willMenuOverlapMainView = YES;
     _animationDuration = 0.5;
     _minPanWidth = 100;
     _hideStatusBar = YES;

@@ -85,6 +85,9 @@ struct PanState {
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     _containerView.transform = CGAffineTransformScale(_containerView.transform, 1.0, 1.0);
+    CGRect frame = _containerView.frame;
+    frame.origin.x = 0;
+    _containerView.frame = frame;
     _rightContainerView.hidden = YES;
     _leftContainerView.hidden = YES;
     
@@ -183,7 +186,7 @@ struct PanState {
      _panGesturesEnabled = YES;
      _tapGesturesEnabled = YES;
     
-    _willMenuOverlapMainView = YES;
+    _willMenuOverlapMainView = NO;
     _animationDuration = 0.5;
     _minPanWidth = 100;
     _hideStatusBar = YES;

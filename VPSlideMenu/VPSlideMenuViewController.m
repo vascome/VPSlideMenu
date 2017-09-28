@@ -203,7 +203,7 @@ struct PanState {
         
         _leftContainerView = [[UIView alloc] initWithFrame:frame];
         _leftContainerView.backgroundColor = [UIColor clearColor];
-        _leftContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _leftContainerView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_leftContainerView];
     }
     
@@ -215,7 +215,7 @@ struct PanState {
         
         _rightContainerView = [[UIView alloc] initWithFrame:frame];
         _rightContainerView.backgroundColor = [UIColor clearColor];
-        _rightContainerView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+        _rightContainerView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:_rightContainerView];
     }
     

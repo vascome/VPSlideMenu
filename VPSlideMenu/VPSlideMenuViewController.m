@@ -259,8 +259,13 @@ struct PanState {
     }
 
     if (collapse) {
-        [self closeMenu:VPSlideMenuSideLeft animated:YES];
-        [self closeMenu:VPSlideMenuSideRight animated:YES];
+        if([self isLeftMenuOpened]) {
+            [self closeMenu:VPSlideMenuSideLeft animated:YES];
+        }
+        if([self isRightMenuOpened]) {
+            [self closeMenu:VPSlideMenuSideRight animated:YES];
+        }
+        
     }
 }
 
@@ -591,12 +596,12 @@ struct PanState {
         if(self.delegate) {
             [self.delegate menuWillClose:type];
         }
-        [self openStatusBar];
         if(animated) {
             [vc beginAppearanceTransition:isAppearing animated:YES];
             [self closeMenu:type withVelocity:0.0];
         }
         else {
+            [self openStatusBar];
             view.frame = frame;
             _containerView.transform = CGAffineTransformScale(_containerView.transform, 1.0, 1.0);
             [self enableContentInteraction];
@@ -926,6 +931,7 @@ struct PanState {
             if(strongSelf.delegate) {
                 [strongSelf.delegate menuDidClosed:type];
             }
+            [strongSelf openStatusBar];
         }
     }];
 }
